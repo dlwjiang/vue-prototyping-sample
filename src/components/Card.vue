@@ -6,11 +6,11 @@
     :style="matchingDegree"
   >
 
-    <div v-if="reveal" class="revealed">
+    <div v-if="reveal">
       {{payload}}
     </div>
 
-    <div v-else class="hidden">
+    <div v-else>
       {{title}}
     </div>
 
@@ -56,13 +56,10 @@
     border-radius: 4px;
     &.reveal {
       background-color: teal !important;
-      color: white
+      color: white;
+      transition: ease-in 300ms;
+      transform: rotateY(180deg) scaleX(-1);
     }
-  }
-
-  .revealed {
-    transition: ease-in 300ms;
-    transform: rotateY(180deg) scaleX(-1);
   }
 
 </style>
