@@ -27,7 +27,8 @@
     props: ['title', 'payload', 'input'],
     computed: {
       reveal() {
-        return this.input.toLowerCase() === this.title.toLowerCase();
+        const magic = this.input === 'all';
+        return (this.input.toLowerCase() === this.title.toLowerCase()) || magic;
       },
       matchingDegree() {
         const { title, input } = this;
